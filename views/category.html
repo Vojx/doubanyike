@@ -1,0 +1,9 @@
+<ul class="category">
+    <li ng-repeat="category in categorys">
+        <a href="#/category/{{category.id}}" data-id="{{category.id}}">
+            <img ng-src="{{category.icon}}" alt="">
+            <h5>{{category.name}}</h5>
+            <p>{{category.description}}</p>
+        </a>
+    </li>
+</ul>

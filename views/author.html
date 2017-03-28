@@ -1,0 +1,27 @@
+<dl class="author">
+    <dt>本周推荐</dt>
+    <dd ng-repeat="author in recAuthors">
+        <div class="avatar">
+            <img ng-src="{{author.avatar}}" alt="">
+        </div>
+        <div class="info">
+            <h5>{{author.name}}</h5>
+            <p>{{author.editor_notes}}</p>
+        </div>
+    </dd>
+</dl>
+
+<dl class="author" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+    <dt>热门作者</dt>
+    <dd ng-repeat="author in reddit.items">
+        <div class="avatar">
+            <img ng-src="{{author.avatar}}" alt="">
+        </div>
+        <div class="info">
+            <h5>{{author.name}}</h5>
+            <p>{{author.editor_notes}}</p>
+        </div>
+    </dd>
+    <div style='clear: both;'></div>
+</dl>
+<div ng-show='reddit.busy'>loading more...</div>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,16 +9,29 @@
     <!-- 引入的包 -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <!-- 滚动加载 -->
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- AngularJS入口 -->
-    <script src="./scripts/app.js"></script>
+    <script src="./app.js"></script>
     <!-- 服务模块 -->
-    <script src="./scripts/servise.js"></script>
-    <!-- 控制器模块 -->
-    <script src="./scripts/controllers.js"></script>
+    <script src="./common/servise.js"></script>
+    <!-- 今日一刻模块 -->
+    <script src="yike_today/TodayController.js"></script>
+    <!-- 往期内容模块 -->
+    <script src="yike_older/OlderController.js"></script>
+    <!-- 热门作者模块 -->
+    <script src="yike_author/AuthorController.js"></script>
+    <!-- 作者详细内容模块 -->
+    <script src="yike_author_detail/AuthorDetailController.js"></script>
+    <!-- 栏目浏览 -->
+    <script src="yike_category/CategoryController.js"></script>
+    <!-- 当前栏目 -->
+    <script src="yike_category_list/ListController.js"></script>
+    <!-- 设置模块 -->
+    <script src="yike_settings/SettingsController.js"></script>
 </head>
-
 <body ng-app="Yike">
     <div class="viewport">
         <!-- 侧边导航 -->
@@ -50,13 +62,12 @@
                 <a href="javascript:;" class="search icon-search"></a>
             </div>
             <!-- 主体 -->
-            <div ng-class="{body: true, collapse: collapsed}" ng-app="CategoryList">
-                <img loading class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+            <div ng-class="{body: true, collapse: collapsed}">
+                <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
                 <!-- 占位符 -->
                 <div ng-view></div>
             </div>
         </div>
     </div>
 </body>
-
 </html>

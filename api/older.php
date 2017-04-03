@@ -5,7 +5,7 @@
 	//php 获得时间
 	$yesterday = strtotime('-1day',time());//昨天的时间戳
 
-	$older = date('Y-m-d',$yesterday);
+	$older = date('Y-m-d',$yesterday); 
 
 
 	// $older=$_GET['older'];

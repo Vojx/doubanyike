@@ -8,8 +8,12 @@
                 templateUrl: 'yike_author/author.html',
                 controller: 'AuthorController',
             })
-            .when('/author/:id', {
+            .when('/author/:authorId', {
                 templateUrl: 'yike_author_detail/author_detail.html',
+                controller: 'AuthorDetailController',
+            })
+            .when('/author/:authorId/:postId', {
+                templateUrl: 'yike_author_detail/author_moreContent.html',
                 controller: 'AuthorDetailController',
             })
 

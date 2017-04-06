@@ -29,6 +29,8 @@
     <script src="yike_category/CategoryController.js"></script>
     <!-- 当前栏目 -->
     <script src="yike_category_list/ListController.js"></script>
+    <!-- 我的喜欢 -->
+    <script src="yike_myLove/myLoveController.js"></script>
     <!-- 设置模块 -->
     <script src="yike_settings/SettingsController.js"></script>
 </head>
@@ -56,17 +58,18 @@
         </div>
         <div class="container">
             <!-- 头部 -->
-            <div ng-class="{header: true, collapse: collapsed}">
+            <!-- <div ng-class="{header: true, collapse: collapsed}">    
                 <a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
                 <h2>{{title}}</h2>
                 <a href="javascript:;" class="search icon-search"></a>
-            </div>
+            </div> -->
             <!-- 主体 -->
-            <div ng-class="{body: true, collapse: collapsed}">
-                <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+            <!-- <div ng-class="{body: true, collapse: collapsed}">
+                <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img> -->
                 <!-- 占位符 -->
-                <div ng-view></div>
-            </div>
+                <!-- <div ng-view></div>
+            </div> -->
+            <div ng-view></div>
         </div>
     </div>
 </body>

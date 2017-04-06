@@ -6,6 +6,7 @@ var Yike = angular.module('Yike', [
 	'Yike.author_detail',
 	'Yike.category',
 	'Yike.category_list',
+	'Yike.myLove',
 	'Yike.settings',
 	]);
 
@@ -34,7 +35,7 @@ Yike.controller('NavController', ['$scope', function($scope) {
 		text: '栏目浏览',
 		icon: 'icon-menu'
 	}, {
-		link: '#/favourite',
+		link: '#/myLove',
 		text: '我的喜欢',
 		icon: 'icon-heart'
 	}, {

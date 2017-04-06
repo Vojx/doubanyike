@@ -1,4 +1,14 @@
-<div class="item">
+<!-- 头部 -->
+<div ng-class="{header: true, collapse: collapsed}">
+    <a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
+    <h2>{{title}}</h2>
+    <a href="javascript:;" class="search icon-search"></a>
+</div>
+<!-- 主体 -->
+<div ng-class="{body: true, collapse: collapsed}">
+    <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+    <!-- 占位符 -->
+    <div class="item">
     <!-- 日期分类 -->
     <div class="mark" ng-if="date">{{date|date:'ddMMM'}}</div>
     <ul class="posts">
@@ -27,4 +37,5 @@
             </a>
         </li>
     </ul>
+</div>
 </div>

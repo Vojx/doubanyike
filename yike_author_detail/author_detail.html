@@ -1,31 +1,43 @@
-<div class="center-title" ng-if="author.avatar">
-    <img ng-src="{{author.avatar}}" alt="{{author.name}}">
-    <h5>{{author.name}}</h5>
-    <p>{{author.resume}}</p>
-    <a href="{{author.url}}">去豆瓣主页</a>
+<!-- 头部 -->
+<div ng-class="{header: true, collapse: collapsed}">
+    <a href="#/author" class="menu glyphicon glyphicon-chevron-left"></a>
+    <h2>{{author.name}}<span ng-show="author.name">的主页</span></h2>
 </div>
-<div class="item">
-    <!-- 日期分类 -->
-    <ul class="posts large">
-        <!-- 文章 -->
-        <li ng-repeat="post in posts">
-            <span href="javascript:;" class="tag" ng-if="post.column.name">{{post.column.name}}</span>
-            <div class="cont">
-                <h3>{{post.title}}</h3>
-                <div class="brief">
-                    <!-- 10001 -->
-                    <!-- 10002 -->
-                    <p ng-class="{only:post.display_style==10001}" ng-if="post.display_style!=10003">{{post.abstract}}</p>
-                    <!-- 10002 -->
-                    <div class="thumb" ng-if="post.display_style==10002">
-                        <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+<!-- 主体 -->
+<div ng-class="{body: true, collapse: collapsed}">
+    <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+    <!-- 占位符 -->
+    <div class="center-title" ng-if="author.avatar">
+        <img ng-src="{{author.avatar}}" alt="{{author.name}}">
+        <h5>{{author.name}}</h5>
+        <p>{{author.resume}}</p>
+        <a href="{{author.url}}">去豆瓣主页</a>
+    </div>
+    <div class="item">
+        <!-- 日期分类 -->
+        <ul class="posts large">
+            <!-- 文章 -->
+            <li ng-repeat="post in posts">
+                <a href="#/author/{{author.id}}/{{post.id}}">
+                    <span href="javascript:;" class="tag" ng-if="post.column.name">{{post.column.name}}</span>
+                    <div class="cont">
+                        <h3>{{post.title}}</h3>
+                        <div class="brief">
+                            <!-- 10001 -->
+                            <!-- 10002 -->
+                            <p ng-class="{only:post.display_style==10001}" ng-if="post.display_style!=10003">{{post.abstract}}</p>
+                            <!-- 10002 -->
+                            <div class="thumb" ng-if="post.display_style==10002">
+                                <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+                            </div>
+                            <!-- 10003 -->
+                            <div class="gallery" ng-if="post.display_style==10003">
+                                <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <!-- 10003 -->
-                    <div class="gallery" ng-if="post.display_style==10003">
-                        <img ng-src="{{post.thumbs[0].small.url}}" alt="">
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

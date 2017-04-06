@@ -1,6 +1,6 @@
 (function(angular) {
     //往期内容
-    var module = angular.module('Yike.older', ['ngRoute']);
+    var module = angular.module('Yike.older', ['ngRoute', 'ngSanitize']);
 
     module.config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -9,7 +9,7 @@
                 controller: 'OlderController',
             })
             .when('/older/:id', {
-                template: '<div ng-bind-html="content"></div>',
+                templateUrl: 'yike_older/older_moreContent.html',
                 controller: 'OlderController',
             })
     }]);

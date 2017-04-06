@@ -22,7 +22,7 @@
 
 		$rootScope.loaded = true;
 
-		// console.log(info.columns);
+		console.log(info.columns);
 
 		$scope.categorys = info.columns;
 

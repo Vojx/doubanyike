@@ -1,0 +1,12 @@
+<!-- 头部 -->
+<div ng-class="{header: true, collapse: collapsed}">
+    <a href="#/author/{{author.id}}" class="menu glyphicon glyphicon-chevron-left"></a>
+    <a href="javascript:;" class="heart icon-heart"></a>
+    <a href="javascript:;" class="share glyphicon glyphicon-share-alt"></a>
+</div>
+<!-- 主体 -->
+<div ng-class="{body: true, collapse: collapsed}">
+    <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+    <!-- 占位符 -->
+    <div ng-bind-html="content"></div>
+</div>

@@ -1,6 +1,6 @@
 (function(angular) {
 
-    var module = angular.module('Yike.today', ['ngRoute', 'ngSanitize']);
+    var module = angular.module('Yike.today', ['ngRoute']);
 
     module.config(['$routeProvider', function($routeProvider) {
         $routeProvider
@@ -9,7 +9,7 @@
                 controller: 'TodayController',
             })
             .when('/today/:id', {
-                template: '<div ng-bind-html="content"></div>',
+                templateUrl: 'yike_today/today_moreContent.html',
                 controller: 'TodayController',
             })
     }]);

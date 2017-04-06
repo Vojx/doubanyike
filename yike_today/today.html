@@ -1,28 +1,39 @@
-<div class="item">
-    <!-- 日期分类 -->
-    <div class="mark" ng-show="loaded">{{date|date:'ddMMM'}}</div>
-    <ul class="posts large">
-        <!-- 文章 -->
-        <li ng-repeat="post in posts">
-            <a href="#/today/{{post.id}}">
-                <span href="javascript:;" class="tag" ng-if="post.column.name">{{post.column.name}}</span>
-                <div class="cont">
-                    <h3>{{post.title}}</h3>
-                    <div class="brief">
-                        <!-- 10001 -->
-                        <!-- 10002 -->
-                        <p ng-class="{only:post.display_style==10001}" ng-if="post.display_style!=10003">{{post.abstract}}</p>
-                        <!-- 10002 -->
-                        <div class="thumb" ng-if="post.display_style==10002">
-                            <img ng-src="{{post.thumbs[0].small.url}}" alt="">
-                        </div>
-                        <!-- 10003 -->
-                        <div class="gallery" ng-if="post.display_style==10003">
-                            <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+<!-- 头部 -->
+<div ng-class="{header: true, collapse: collapsed}">
+    <a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
+    <h2>{{title}}</h2>
+    <a href="javascript:;" class="search icon-search"></a>
+</div>
+<!-- 主体 -->
+<div ng-class="{body: true, collapse: collapsed}">
+    <img class="loading" ng-hide="loaded" src="./public/images/loading.gif"></img>
+    <!-- 占位符 -->
+    <div class="item">
+        <!-- 日期分类 -->
+        <div class="mark" ng-show="loaded">{{date|date:'ddMMM'}}</div>
+        <ul class="posts large">
+            <!-- 文章 -->
+            <li ng-repeat="post in posts">
+                <a href="#/today/{{post.id}}">
+                    <span href="javascript:;" class="tag" ng-if="post.column.name">{{post.column.name}}</span>
+                    <div class="cont">
+                        <h3>{{post.title}}</h3>
+                        <div class="brief">
+                            <!-- 10001 -->
+                            <!-- 10002 -->
+                            <p ng-class="{only:post.display_style==10001}" ng-if="post.display_style!=10003">{{post.abstract}}</p>
+                            <!-- 10002 -->
+                            <div class="thumb" ng-if="post.display_style==10002">
+                                <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+                            </div>
+                            <!-- 10003 -->
+                            <div class="gallery" ng-if="post.display_style==10003">
+                                <img ng-src="{{post.thumbs[0].small.url}}" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </li>
-    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
